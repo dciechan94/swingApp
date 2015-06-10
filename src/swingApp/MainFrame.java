@@ -1,6 +1,8 @@
 package swingApp;
 
 import java.awt.BorderLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -9,30 +11,35 @@ import javax.swing.JTextField;
 
 public class MainFrame extends JFrame {
 	
-	JTextField nameField;
-	JTextField occupationField;
+	FormPanel formPanel;
 	JTextArea textArea;
 	JButton okBtn;
 	
 	public MainFrame() {
 		super("Hello World");
 		
-		nameField = new JTextField(10);
-		occupationField = new JTextField(10);
-		okBtn = new JButton("OK");
 		
+		okBtn = new JButton("OK");
 		textArea = new JTextArea();
+		formPanel = new FormPanel();
 		
 		
 		setLayout(new BorderLayout());
 		
+		okBtn.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				textArea.append("Button Clicked\n");
+				
+			}
+		});
 		
-		add(nameField, BorderLayout.NORTH);
-		add(occupationField, BorderLayout.WEST);
+		
 		add(textArea, BorderLayout.CENTER);
+		add(formPanel, BorderLayout.WEST);
 		add(okBtn, BorderLayout.SOUTH);
 		
-		setSize(400, 300);
+		setSize(600, 400);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setVisible(true);
 	}
