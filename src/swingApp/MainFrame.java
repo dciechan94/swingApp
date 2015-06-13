@@ -29,7 +29,7 @@ public class MainFrame extends JFrame {
 		okBtn.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				textArea.append("Button Clicked\n");
+				textArea.append("ActionListener fires.\n");
 				
 			}
 		});
