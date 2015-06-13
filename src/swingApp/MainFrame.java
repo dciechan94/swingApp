@@ -4,10 +4,11 @@ import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JTextArea;
-import javax.swing.JTextField;
+import javax.swing.border.Border;
 
 public class MainFrame extends JFrame {
 	
@@ -38,6 +39,7 @@ public class MainFrame extends JFrame {
 		add(textArea, BorderLayout.CENTER);
 		add(formPanel, BorderLayout.WEST);
 		add(okBtn, BorderLayout.SOUTH);
+	
 		
 		setSize(600, 400);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
